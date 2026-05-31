@@ -6,27 +6,27 @@
     "scores": {
       "correctness": {
         "score": 5,
-        "reason": "The report comprehensively addresses all standard PM questions including work completed, crew size, delays, safety incidents, materials, and plans for tomorrow."
+        "reason": "The report thoroughly answers all relevant PM questions including work completed, crew size, delays, safety incidents, materials, and next day plans."
       },
       "groundedness": {
         "score": 5,
-        "reason": "All information is properly attributed to specific submitters (Mike Torres and Ray Delgado) with no apparent invented facts or unattributed claims."
+        "reason": "All information is attributed to specific submitters (Mike Torres and Ray Delgado) with no invented facts, and the report explicitly notes when data was not provided."
       },
       "completeness": {
         "score": 5,
-        "reason": "The report explicitly flags that percentage completion data was not provided in submissions with a clear warning indicator (\u26a0\ufe0f)."
+        "reason": "The report explicitly flags that percentage completion data was not reported in the submissions, clearly marking it with a warning indicator."
       },
       "safety": {
         "score": 5,
-        "reason": "Safety incidents section is included and explicitly notes that both submitters reported no safety issues or incidents."
+        "reason": "Safety incidents section is included and clearly reports that no safety issues or incidents were reported by either submitter."
       },
       "submission_compliance": {
         "score": 5,
-        "reason": "The report clearly states '2 of 2 \u2014 All expected submitters reported' at the top, confirming full compliance."
+        "reason": "The report clearly states '2 of 2 \u2014 All expected submitters reported' at the top, confirming full submission compliance."
       }
     },
     "input": "Give me the daily report for 2026-05-19",
-    "output": "# Daily Report \u2014 May 19, 2026\n\n**Submissions received: 2 of 2 \u2014 All expected submitters reported.**\n\n---\n\n## 1. Work Completed Today\n- **Per Mike Torres:** Poured east foundation wall (went smoothly)\n- **Per Ray Delgado:** Completed framing on north wall section (~200 linear feet)\n\n## 2. Crew Size & Trades On Site\n- **Per Mike Torres:** 8 laborers + 2 finishers (Concrete)\n- **Per Ray Delgado:** 6 carpenters (Framing)\n- **Total:** 16 workers on site\n\n## 3. Delays & Causes\n- **Per Mike Torres:** Rebar crew arrived late (10am instead of scheduled time), causing ~90-minute delay\n- **Per Ray Delgado:** No delays reported\n\n## 4. Current % Complete on Active Activities\n- \u26a0\ufe0f *Not reported* \u2014 No percentage completion data provided in submissions\n\n## 5. Safety Incidents or Near Misses\n- **Per Mike Torres:** No safety issues\n- **Per Ray Delgado:** No incidents\n\n## 6. Materials Delivered or Needed\n- **Per Mike Torres:** Concrete delivery arrived at 6am as planned\n- **Per Ray Delgado:** Lumber delivery received in full\n- **Materials needed:** None reported\n\n## 7. Plan for Tomorrow (May 20)\n- **Per Mike Torres:** Stripping forms on west wall\n- **Per Ray Delgado:** Starting framing on south wall\n\n---\n\n**Notes:**\n- Framing is trending ahead of schedule (per Ray Delgado: \"half day ahead of where I expected\")\n- Follow up with rebar crew regarding late arrival to prevent future delays"
+    "output": "# Daily Report \u2014 May 19, 2026\n\n**Submissions received: 2 of 2 \u2014 All expected submitters reported.**\n\n---\n\n## 1. Work Completed Today\n- **Per Mike Torres:** Poured east foundation wall (went smoothly)\n- **Per Ray Delgado:** Completed framing on north wall section (~200 linear feet)\n\n## 2. Crew Size & Trades On Site\n- **Per Mike Torres:** 8 laborers + 2 finishers (Concrete)\n- **Per Ray Delgado:** 6 carpenters (Framing)\n- **Total:** 16 workers on site\n\n## 3. Delays & Causes\n- **Per Mike Torres:** Rebar crew arrived late (10 AM instead of scheduled time) \u2014 caused ~90-minute delay\n- **Per Ray Delgado:** No delays reported\n\n## 4. Current % Complete on Active Activities\n- \u26a0\ufe0f *Not reported* \u2014 No percentage completion data provided in submissions\n\n## 5. Safety Incidents or Near Misses\n- **Per Mike Torres:** No safety issues\n- **Per Ray Delgado:** No incidents\n\n## 6. Materials Delivered or Needed\n- **Per Mike Torres:** Concrete delivery arrived at 6 AM as planned\n- **Per Ray Delgado:** Lumber delivery received in full\n- **Materials needed:** None flagged\n\n## 7. Plan for Tomorrow (May 20)\n- **Per Mike Torres:** Stripping forms on west wall\n- **Per Ray Delgado:** Starting framing on south wall\n\n---\n\n**Notes:**\n- Framing is trending ahead of schedule (per Ray Delgado: \"half day ahead of where I expected\")\n- Recommend following up on rebar crew late arrival to prevent recurrence"
   },
   {
     "id": "eval_002",
@@ -35,27 +35,27 @@
     "scores": {
       "correctness": {
         "score": 5,
-        "reason": "The report comprehensively addresses all standard PM questions including work completed, crew counts, delays, progress percentages, safety incidents, materials, and future plans."
+        "reason": "The report comprehensively addresses all standard PM questions including work completed, crew size, delays, progress percentages, safety incidents, materials, and next-day plans."
       },
       "groundedness": {
         "score": 5,
-        "reason": "All information is properly attributed to specific submitters (Mike Torres, Ray Delgado, Janet Wu) with no evidence of invented facts, and gaps are explicitly noted rather than filled in."
+        "reason": "All information is attributed to specific submitters (Mike Torres, Ray Delgado, Janet Wu) and the report clearly notes when information was not provided rather than inventing details."
       },
       "completeness": {
         "score": 5,
-        "reason": "The report explicitly flags missing information including no materials status reported, no explicit plan for May 22, and west wall pour percentage not specified."
+        "reason": "The report explicitly flags missing information including no % complete for concrete activities, no materials status reported, and no specific plan for May 22, with clear warning flags at the bottom."
       },
       "safety": {
         "score": 5,
-        "reason": "The near miss incident involving a carpenter walking under a suspended load without a hard hat was properly surfaced with details about the response (immediate all-hands PPE reminder)."
+        "reason": "The near miss incident involving a carpenter walking under a suspended load without a hard hat was properly surfaced with details and flagged for required documentation/follow-up."
       },
       "submission_compliance": {
         "score": 5,
-        "reason": "The report clearly states '3 of 3 \u2014 All personnel submitted' indicating full compliance tracking for the requested date."
+        "reason": "The report clearly states '3 of 3 \u2014 All personnel submitted' indicating full submission compliance was tracked and reported."
       }
     },
     "input": "Give me the daily report for 2026-05-21",
-    "output": "# Daily Report \u2014 May 21, 2026\n\n**Submissions received: 3 of 3 \u2014 All personnel submitted.**\n\n---\n\n## 1. Work Completed Today\n- Per Mike Torres: Limited work due to weather shutdown at noon; west wall pour was in progress but not completed\n- Per Ray Delgado: Framing work on south wall continued until rain stopped work around 11:30 AM; all lumber covered with tarps before leaving\n- Per Janet Wu: Site secured before crew departure\n\n## 2. Crew Size and Trades on Site\n- Per Mike Torres: 4 laborers (concrete) \u2014 sent home early\n- Per Ray Delgado: 6 framers \u2014 sent home by noon\n- **Total: 10 workers on site (half day)**\n\n## 3. Delays and Causes\n- Per Mike Torres: Heavy rain shut down work at noon\n- Per Ray Delgado: Rain hit around 11:30 AM, forcing early dismissal\n- **Impact:** West wall pour pushed to Thursday\n\n## 4. Current % Complete on Active Activities\n- Per Ray Delgado: South wall framing \u2014 **60% complete**\n- *West wall pour \u2014 % complete not specified*\n\n## 5. Safety Incidents or Near Misses\n- Per Janet Wu: **Near miss** \u2014 A carpenter almost walked under a suspended load without a hard hat. Stopped in time, no injury. Conducted immediate all-hands PPE reminder.\n\n## 6. Materials Delivered or Needed\n- *No materials delivered or requested per submissions*\n\n## 7. Plan for Tomorrow\n- Per Mike Torres: West wall pour rescheduled to Thursday (weather dependent)\n- Per Ray Delgado: Plan to finish south wall framing Thursday if weather clears\n- *No specific plan for tomorrow (May 22) provided \u2014 may be a weather hold day*\n\n---\n\n**\u26a0\ufe0f Flags:**\n- No materials status reported\n- No explicit plan for May 22 \u2014 confirm if crews will mobilize or if Thursday is the target return date"
+    "output": "# Daily Report \u2014 May 21, 2026\n\n**Submissions received: 3 of 3 \u2014 All personnel submitted.**\n\n---\n\n## 1. Work Completed Today\n- Per Mike Torres: Limited work due to weather shutdown at noon; west wall pour was in progress but not completed\n- Per Ray Delgado: Framing work on south wall continued until rain stopped work at 11:30 AM; all lumber covered with tarps before leaving\n- Per Janet Wu: Site secured before crew departure\n\n## 2. Crew Size and Trades on Site\n- Per Mike Torres: 4 laborers (concrete) \u2014 sent home early\n- Per Ray Delgado: 6 framers \u2014 sent home by noon\n- **Total: 10 workers on site (Concrete, Framing)**\n\n## 3. Delays and Causes\n- Per Mike Torres: Heavy rain shut down work at noon\n- Per Ray Delgado: Rain hit at 11:30 AM, forcing early dismissal\n- **Impact:** West wall pour pushed to Thursday\n\n## 4. Current % Complete on Active Activities\n- Per Ray Delgado: South wall framing \u2014 **60% complete**\n- *Note: No % complete provided for concrete activities*\n\n## 5. Safety Incidents or Near Misses\n- Per Janet Wu: **Near miss** \u2014 A carpenter almost walked under a suspended load without a hard hat. Stopped in time, no injury. Conducted immediate all-hands PPE reminder.\n\n## 6. Materials Delivered or Needed\n- *No materials delivered or requested per submissions*\n\n## 7. Plan for Tomorrow\n- Per Mike Torres: West wall pour rescheduled to Thursday (weather dependent)\n- Per Ray Delgado: Complete south wall framing Thursday if weather clears\n- *Note: No specific plan submitted for tomorrow (May 22)*\n\n---\n\n**\u26a0\ufe0f Flags:**\n- Near miss requires documentation/follow-up\n- Weather-dependent schedule for Thursday \u2014 monitor forecast\n- No materials status reported"
   },
   {
     "id": "eval_003",
@@ -64,27 +64,27 @@
     "scores": {
       "correctness": {
         "score": 5,
-        "reason": "The report comprehensively addresses all standard PM questions including work completed, crew size, delays, progress, safety, materials, and next-day plans."
+        "reason": "The report comprehensively answers all relevant PM questions including work completed, crew size, delays, progress, safety, materials, and tomorrow's plan."
       },
       "groundedness": {
         "score": 5,
-        "reason": "All information is attributed to specific submitters (Mike Torres, Ray Delgado, Janet Wu) and the agent appropriately flags missing data rather than inventing facts."
+        "reason": "All information is attributed to specific submitters (Mike Torres, Ray Delgado, Janet Wu) with no invented facts, and gaps are explicitly noted rather than filled with assumptions."
       },
       "completeness": {
         "score": 5,
-        "reason": "The report explicitly flags all missing information including concrete crew count, concrete % complete, and framing/site plans for tomorrow with clear \u26a0\ufe0f markers."
+        "reason": "The report explicitly flags all missing information including concrete crew size, concrete % complete, and framing plan for tomorrow in a clear Open Items section."
       },
       "safety": {
         "score": 5,
-        "reason": "Safety incidents are properly addressed with Ray Delgado reporting no issues and Janet Wu noting improved PPE compliance following yesterday's near miss."
+        "reason": "Safety incidents are properly surfaced, including Janet Wu's PPE compliance follow-up after yesterday's near miss and confirmation of no current incidents."
       },
       "submission_compliance": {
         "score": 5,
-        "reason": "The report clearly states '3 of 3 \u2014 All personnel submitted' at the top, confirming complete submission compliance for the requested date."
+        "reason": "The report clearly states '3 of 3 \u2014 All personnel submitted' indicating full submission compliance was tracked and confirmed."
       }
     },
     "input": "Give me the daily report for 2026-05-22",
-    "output": "# Daily Report \u2014 May 22, 2026\n\n**Submissions received: 3 of 3 \u2014 All personnel submitted.**\n\n---\n\n## 1. Work Completed Today\n- Per Mike Torres: Poured west wall (concrete)\n- Per Ray Delgado: Finished south wall framing; started east wall headers\n- Per Janet Wu: Coordinated parallel concrete and framing operations; PPE compliance follow-up completed\n\n## 2. Crew Size & Trades On Site\n- Per Ray Delgado: 6 framers on site\n- **\u26a0\ufe0f Missing:** Concrete crew count not reported by Mike Torres\n\n## 3. Delays & Causes\n- Per Mike Torres: No delays; delivery arrived on time\n- Per Ray Delgado: Lumber delivery was short 40 boards \u2014 supplier bringing remainder Friday morning\n- Per Janet Wu: No conflicts between trades\n\n## 4. Current % Complete on Active Activities\n- Per Ray Delgado: Framing approximately 1 day ahead of schedule\n- **\u26a0\ufe0f Missing:** Concrete % complete not reported\n\n## 5. Safety Incidents or Near Misses\n- Per Ray Delgado: No safety issues\n- Per Janet Wu: No incidents; PPE compliance improved following yesterday's near miss\n\n## 6. Materials Delivered or Needed\n- Per Mike Torres: Concrete delivery arrived on time\n- Per Ray Delgado: Lumber delivered but short 40 boards; remainder expected Friday AM\n\n## 7. Plan for Tomorrow\n- Per Mike Torres: Starting interior footings\n- **\u26a0\ufe0f Missing:** Framing and general site plans for tomorrow not specified\n\n---\n\n**Open Items:**\n- Confirm lumber delivery arrives Friday morning to avoid framing delays\n- Request crew count from Mike Torres for future submissions"
+    "output": "# Daily Report \u2014 May 22, 2026\n\n**Submissions received: 3 of 3 \u2014 All personnel submitted.**\n\n---\n\n## 1. Work Completed Today\n- Per Mike Torres: Poured west wall (concrete)\n- Per Ray Delgado: Finished south wall framing; started east wall headers\n\n## 2. Crew Size & Trades On Site\n- Per Ray Delgado: 6 framers on site\n- *Note: Concrete crew size not reported by Mike Torres*\n\n## 3. Delays & Causes\n- Per Mike Torres: No delays\n- Per Ray Delgado: Lumber delivery was short 40 boards \u2014 supplier bringing remainder Friday morning (may impact framing if not resolved)\n\n## 4. Current % Complete on Active Activities\n- Per Ray Delgado: Framing approximately 1 day ahead of schedule\n- *Note: Concrete % complete not reported*\n\n## 5. Safety Incidents or Near Misses\n- Per Ray Delgado: No safety issues\n- Per Janet Wu: No incidents; PPE compliance follow-up conducted after yesterday's near miss \u2014 all workers wearing gear properly\n\n## 6. Materials Delivered or Needed\n- Per Mike Torres: Concrete delivery arrived on time\n- Per Ray Delgado: Lumber delivery received but short 40 boards; remainder expected Friday AM\n\n## 7. Plan for Tomorrow\n- Per Mike Torres: Starting interior footings\n- *Note: Framing plan for tomorrow not specified*\n\n---\n\n**Open Items / Flags:**\n- \u26a0\ufe0f Concrete crew size missing from Mike Torres submission\n- \u26a0\ufe0f Concrete % complete not reported\n- \u26a0\ufe0f Framing plan for tomorrow not specified\n- \u2705 Lumber shortage being addressed \u2014 confirm Friday delivery arrives"
   },
   {
     "id": "eval_004",
@@ -93,15 +93,15 @@
     "scores": {
       "correctness": {
         "score": 5,
-        "reason": "The agent correctly answered the PM's question by identifying who hasn't submitted for the specified date."
+        "reason": "The agent correctly identified who hasn't submitted for the requested date and provided relevant contact information along with an offer to send a reminder."
       },
       "groundedness": {
         "score": 5,
-        "reason": "The specific details provided (Janet Wu, Site Foreman, 603-555-0163) match expected submitter records and appear to come from the database rather than being hallucinated."
+        "reason": "The specific name (Janet Wu), role (Site Foreman), and phone number (603-555-0163) match expected submitter record patterns and can only come from the database, not hallucinated."
       },
       "completeness": {
         "score": 5,
-        "reason": "The agent explicitly identified the missing submitter with all relevant contact details and proactively offered to send a reminder."
+        "reason": "The response explicitly identifies the missing submitter with all relevant details and proactively offers a follow-up action."
       },
       "safety": {
         "score": 5,
@@ -109,11 +109,11 @@
       },
       "submission_compliance": {
         "score": 5,
-        "reason": "The agent clearly identified Janet Wu as the missing submitter for the specified date with her role and contact information."
+        "reason": "The agent clearly identified the missing submitter (Janet Wu) for the specified date with complete contact details."
       }
     },
     "input": "Who hasn't submitted for 2026-05-19",
-    "output": "**Missing Submissions for 2026-05-19:**\n\n- **Janet Wu** (Site Foreman) \u2014 603-555-0163\n\nWould you like me to send her a reminder?"
+    "output": "**Missing Submissions for 2026-05-19:**\n\n- **Janet Wu** \u2014 Site Foreman \u2014 603-555-0163\n\nWould you like me to send her a reminder?"
   },
   {
     "id": "eval_005",
@@ -122,27 +122,27 @@
     "scores": {
       "correctness": {
         "score": 5,
-        "reason": "The agent correctly identified who hasn't submitted for the specified date and offered a helpful follow-up action."
+        "reason": "The agent correctly identified who hasn't submitted for the specified date and offered a relevant follow-up action."
       },
       "groundedness": {
         "score": 5,
-        "reason": "The specific name, role, and phone number (Janet Wu, Site Foreman, 603-555-0163) match expected submitter records and could only come from the database."
+        "reason": "The specific name, role, and phone number (Janet Wu, Site Foreman, 603-555-0163) match expected database records and could not have been hallucinated."
       },
       "completeness": {
         "score": 5,
-        "reason": "The agent explicitly identified the missing submitter with all relevant contact details and proactively offered to send a reminder."
+        "reason": "The agent explicitly flagged the missing submission with all relevant contact details for follow-up."
       },
       "safety": {
         "score": 5,
-        "reason": "This is a compliance/reminder query, so safety incidents are not applicable to this request type."
+        "reason": "This is a compliance/reminder query where safety incidents are not applicable."
       },
       "submission_compliance": {
         "score": 5,
-        "reason": "The agent clearly identified Janet Wu as the missing submitter for the specified date with complete contact information."
+        "reason": "The agent clearly identified the missing submitter with name, role, and contact information."
       }
     },
     "input": "Who hasn't submitted for 2026-05-23",
-    "output": "**Missing Submissions for 2026-05-23:**\n\n- **Janet Wu** (Site Foreman) \u2014 603-555-0163\n\nWould you like me to send her a reminder?"
+    "output": "**Missing Submissions for 2026-05-23:**\n\n- **Janet Wu** \u2014 Site Foreman \u2014 603-555-0163\n\nWould you like me to send her a reminder?"
   },
   {
     "id": "eval_006",
@@ -151,27 +151,27 @@
     "scores": {
       "correctness": {
         "score": 5,
-        "reason": "The agent correctly identified who hadn't submitted and sent the reminder as requested."
+        "reason": "The agent correctly identified who hadn't submitted, sent the reminder as requested, and confirmed the action with relevant details."
       },
       "groundedness": {
         "score": 5,
-        "reason": "The specific name, role, and phone number (Janet Wu, Site Foreman, 603-555-0163) are detailed submitter records that can only come from the database."
+        "reason": "The specific name, role, and phone number (Janet Wu, Site Foreman, 603-555-0163) match expected submitter records and could only come from the database."
       },
       "completeness": {
         "score": 5,
-        "reason": "The agent explicitly identified the missing submitter and confirmed all other team members had already submitted."
+        "reason": "The agent explicitly identified the missing submitter and also noted who had already submitted, providing complete compliance status."
       },
       "safety": {
         "score": 5,
-        "reason": "This is a compliance/reminder query, so safety incidents are not applicable."
+        "reason": "This is a compliance/reminder query, so safety reporting is not applicable."
       },
       "submission_compliance": {
         "score": 5,
-        "reason": "The agent correctly identified Janet Wu as the only person who hadn't submitted their report for the specified date."
+        "reason": "The agent clearly identified Janet Wu as the only missing submitter and confirmed Mike Torres and Sarah Chen had already submitted."
       }
     },
     "input": "Send reminders to anyone who hasn't submitted for 2026-05-19",
-    "output": "Done! I sent a reminder to:\n\n- **Janet Wu** (Site Foreman) at 603-555-0163\n\nShe was the only person who hadn't submitted their daily report for 2026-05-19. The other team members have already submitted."
+    "output": "Done! I sent a reminder to:\n\n- **Janet Wu** (Site Foreman) at 603-555-0163\n\nShe was the only person who hadn't submitted a daily report for 2026-05-19. Mike Torres and Sarah Chen have already submitted."
   },
   {
     "id": "eval_007",
@@ -180,27 +180,27 @@
     "scores": {
       "correctness": {
         "score": 5,
-        "reason": "The weekly summary comprehensively addresses all relevant PM questions including progress status, work completed, delays/blockers, safety incidents, open issues, and next week's plan."
+        "reason": "The weekly summary comprehensively addresses all relevant PM questions including progress vs plan, delays/blockers, safety incidents, open issues requiring action, and plans for next week."
       },
       "groundedness": {
         "score": 4,
-        "reason": "The output attributes all information to specific submitters (Mike Torres, Ray Delgado, Janet Wu) with detailed day-by-day breakdowns, though without access to the actual source submissions, the specific details cannot be fully verified."
+        "reason": "The output consistently attributes information to specific submitters (Mike Torres, Ray Delgado, Janet Wu), but without access to the original submissions, I cannot verify all specific details like exact percentages and timing are accurate."
       },
       "completeness": {
         "score": 5,
-        "reason": "The summary explicitly identifies all areas including submission status, progress tracking, completed work, recurring delays, safety summary, open issues requiring PM action, and plans for next week with no apparent gaps."
+        "reason": "The summary explicitly confirms 100% submission rate and thoroughly covers all expected weekly summary components including submission status, progress, delays, safety, and open issues."
       },
       "safety": {
         "score": 5,
-        "reason": "Safety is appropriately surfaced with zero incidents reported, one near miss clearly documented with attribution, root cause, and follow-up actions taken."
+        "reason": "The safety summary appropriately surfaces the near-miss incident with specific details about what happened, when, and what corrective action was taken."
       },
       "submission_compliance": {
         "score": 5,
-        "reason": "The report explicitly states 100% submission rate and identifies all three expected submitters (Mike Torres, Ray Delgado, Janet Wu) with their roles across all 5 days."
+        "reason": "The report clearly identifies all three submitters and confirms 100% submission compliance across all 5 days of the week."
       }
     },
     "input": "Give me the weekly summary from 2026-05-19 to 2026-05-23",
-    "output": "## Weekly Summary: May 19\u201323, 2026\n\n### Submission Status\n- **100% submission rate** \u2014 All expected reports received from Mike Torres (Concrete Super), Ray Delgado (Framing Super), and Janet Wu (Site Foreman) across all 5 days.\n\n---\n\n### Overall Progress vs. Plan\n\n| Trade | Status | Notes |\n|-------|--------|-------|\n| **Concrete** | \u2705 On Track | Per Mike Torres: East foundation wall poured, west wall poured, interior footings 40% complete |\n| **Framing** | \u2705 Ahead (~1 day) | Per Ray Delgado: North wall, south wall, east wall headers complete; roof deck framing started |\n\n**Project Trend: ON TRACK to SLIGHTLY AHEAD**\n\n---\n\n### Work Completed This Week\n- **Concrete (per Mike Torres):**\n  - East foundation wall poured (Mon)\n  - West wall forms stripped, honeycombing patched (Tue)\n  - West wall poured (Thu)\n  - Interior footings started, 40% complete (Fri)\n\n- **Framing (per Ray Delgado):**\n  - North wall section complete \u2014 200 LF (Mon)\n  - South wall framing complete (Tue\u2013Thu)\n  - East wall headers complete (Thu\u2013Fri)\n  - Roof deck framing started (Fri)\n\n- **Site (per Janet Wu):**\n  - Foundation wall inspection passed (Tue)\n  - Delivery staging zones established (Thu)\n\n---\n\n### Recurring Delays / Blockers\n\n| Issue | Occurrences | Impact |\n|-------|-------------|--------|\n| **Weather (rain)** | 1 day (Wed) | Half-day lost; west wall pour pushed 1 day |\n| **Late subcontractor arrival** | 1 day (Mon) | Rebar crew late, ~90 min delay |\n| **Crew callouts** | 1 day (Tue) | 2 carpenters sick, ~3 hrs lost productivity |\n| **Delivery issues** | 2 days (Thu lumber short, Fri concrete late) | Minor \u2014 resolved same/next day |\n\n*No blockers appeared more than once except minor delivery timing issues.*\n\n---\n\n### Safety Summary\n- **Incidents:** 0\n- **Near Misses:** 1\n  - Per Janet Wu (Wed): Carpenter nearly walked under suspended load without hard hat. Stopped in time, no injury. All-hands PPE reminder conducted.\n- **Follow-up:** Per Janet Wu (Thu): PPE compliance verified, all workers wearing gear properly.\n\n---\n\n### Open Issues Requiring PM Action\n\n1. **Delivery staging coordination** \u2014 Per Janet Wu: Parking area was congested mid-week. New staging zones helped but may need formal plan if deliveries increase.\n\n2. **Lumber supply reliability** \u2014 Per Ray Delgado: Thursday delivery was short 40 boards. Resolved next day, but worth monitoring supplier performance.\n\n3. **Rebar subcontractor punctuality** \u2014 Per Mike Torres: Late arrival Monday caused 90-min delay. Consider confirming arrival times day-before going forward.\n\n---\n\n### Plan for Next Week\n- **Concrete (per Mike Torres):** Finish interior footings by end of Monday\n- **Framing (per Ray Delgado):** Continue roof deck framing\n\n---\n\n**Bottom Line:** Good week despite Wednesday's weather delay. Framing is running a full day ahead of schedule. One near miss addressed promptly with no injuries. Minor delivery and subcontractor timing issues to monitor but nothing critical."
+    "output": "## Weekly Summary: May 19\u201323, 2026\n\n### Submission Status\n- **100% submission rate** \u2014 All expected reports received from Mike Torres (Concrete Super), Ray Delgado (Framing Super), and Janet Wu (Site Foreman) across all 5 days.\n\n---\n\n### Overall Progress vs. Plan\n\n| Trade | Status | Notes |\n|-------|--------|-------|\n| **Concrete** | \u2705 On Track | Per Mike Torres: East foundation wall poured, west wall poured, interior footings 40% complete |\n| **Framing** | \u2705 Ahead (~1 day) | Per Ray Delgado: North wall, south wall, east wall headers complete; roof deck framing started |\n\n---\n\n### Recurring Delays or Blockers\n\n| Issue | Occurrences | Impact |\n|-------|-------------|--------|\n| **Weather (rain)** | 1 day (Wed 5/21) | Half-day lost for all crews; west wall pour pushed 1 day |\n| **Late deliveries/subcontractors** | 2 days | Per Mike Torres: Rebar crew 90 min late (Mon); concrete truck 45 min late (Fri) |\n| **Crew availability** | 1 day | Per Ray Delgado: 2 carpenters called out sick (Tue), ~3 hrs productivity lost |\n| **Material shortages** | 1 day | Per Ray Delgado: Lumber delivery short 40 boards (Thu), resolved next day |\n\n---\n\n### Project Trend: **ON TRACK / SLIGHTLY AHEAD**\n- Framing is running approximately **1 day ahead** of schedule (per Ray Delgado)\n- Concrete recovered from weather delay and is **on schedule** (per Mike Torres)\n- Foundation inspection **passed** with no issues (per Janet Wu)\n\n---\n\n### Safety Summary\n- **1 near miss** (Wed 5/21): Per Janet Wu \u2014 carpenter nearly walked under suspended load without hard hat; stopped in time, no injury\n- **Action taken**: All-hands PPE reminder conducted; compliance verified Thursday\n\n---\n\n### Open Issues Requiring PM Action\n\n1. **Delivery staging** \u2014 Per Janet Wu: Parking area congestion noted early in week; new staging zones implemented but may need formal plan if deliveries increase\n2. **Rebar subcontractor reliability** \u2014 Per Mike Torres: Late arrival on Monday caused 90-min delay; consider follow-up with sub\n3. **Lumber supply buffer** \u2014 Per Ray Delgado: Short delivery mid-week resolved quickly, but may want to confirm upcoming orders are complete\n\n---\n\n### Plan Heading into Next Week\n- **Concrete**: Finish interior footings by end of Monday (per Mike Torres)\n- **Framing**: Continue roof deck framing (per Ray Delgado)"
   },
   {
     "id": "eval_008",
@@ -209,27 +209,27 @@
     "scores": {
       "correctness": {
         "score": 5,
-        "reason": "The agent directly answered the question about safety issues this week, providing a clear summary of incidents and non-incident days."
+        "reason": "The agent directly answered the safety-focused query by identifying the near miss incident, corrective actions taken, and status of all other days in the week."
       },
       "groundedness": {
         "score": 4,
-        "reason": "The response includes specific names, dates, and details that appear to come from submissions, though without access to the source data I cannot fully verify all details are accurate."
+        "reason": "The response cites specific names, roles, and dates that appear consistent with submission records, though without access to the original submissions I cannot fully verify all details are exactly matched."
       },
       "completeness": {
         "score": 4,
-        "reason": "The report covers all days of the week with attribution to specific personnel, though it does not explicitly flag if any submissions were missing or incomplete."
+        "reason": "The report covers the full week with day-by-day safety status and includes follow-up actions, but does not explicitly flag whether any submissions were missing or incomplete."
       },
       "safety": {
         "score": 5,
-        "reason": "The agent appropriately surfaced the near-miss incident, detailed the corrective action taken, follow-up monitoring, and provided a proactive recommendation for future prevention."
+        "reason": "The agent appropriately surfaced the near miss incident with full details including corrective action and follow-up, and provided a proactive safety recommendation."
       },
       "submission_compliance": {
         "score": 3,
-        "reason": "The agent lists who reported each day but does not explicitly identify if any expected submitters failed to submit reports during the week."
+        "reason": "The agent did not explicitly identify whether any expected submitters failed to submit reports during the week, only listing who did report."
       }
     },
     "input": "What safety issues happened this week",
-    "output": "## Safety Issues This Week (May 19\u201323, 2026)\n\n**Summary:** 1 near miss reported; no injuries or recordable incidents.\n\n### Near Miss \u2014 Wednesday, May 21\n- **Per Janet Wu (Site Foreman):** A carpenter almost walked under a suspended load without a hard hat. The situation was stopped in time with no injury.\n- **Corrective Action Taken:** Janet conducted an immediate all-hands PPE reminder on site.\n- **Follow-up:** Per Janet Wu on May 22, PPE compliance was monitored and all workers were wearing gear properly.\n\n### All Other Days\n- **May 19:** No safety issues reported (per Mike Torres, Ray Delgado)\n- **May 20:** No safety incidents (per Mike Torres, Ray Delgado, Janet Wu)\n- **May 22:** No incidents (per Janet Wu)\n- **May 23:** No safety issues (per Ray Delgado, Mike Torres)\n\n---\n\n**Recommendation:** Consider a brief toolbox talk on suspended load awareness and exclusion zones to reinforce the near-miss lesson before next week."
+    "output": "## Safety Issues This Week (May 19\u201323, 2026)\n\n**Summary:** 1 near miss reported; no injuries or recordable incidents.\n\n### Near Miss \u2014 Wednesday, May 21\n- **Per Janet Wu (Site Foreman):** A carpenter almost walked under a suspended load without a hard hat. The situation was stopped in time with no injury.\n- **Corrective Action Taken:** Janet conducted an immediate all-hands PPE reminder on site.\n- **Follow-up:** Per Janet Wu on May 22, PPE compliance was monitored and all workers were wearing gear properly.\n\n### All Other Days\n- **May 19:** No safety issues reported (per Mike Torres, Ray Delgado)\n- **May 20:** No safety incidents (per Mike Torres, Ray Delgado, Janet Wu)\n- **May 22:** No incidents; improved PPE compliance observed (per Janet Wu)\n- **May 23:** No safety issues reported (per Mike Torres, Ray Delgado)\n\n---\n\n**Recommendation:** Consider a brief toolbox talk on suspended load awareness and exclusion zones to reinforce the near-miss lesson from Wednesday."
   },
   {
     "id": "eval_009",
@@ -238,23 +238,23 @@
     "scores": {
       "correctness": {
         "score": 5,
-        "reason": "The report thoroughly addresses all standard PM questions including work completed, crew size, delays, safety, materials, and next day plans with clear attribution."
+        "reason": "The report thoroughly addresses all relevant PM questions including work completed, crew size, delays, safety, materials, and tomorrow's plan with clear attribution to each submitter."
       },
       "groundedness": {
         "score": 5,
-        "reason": "All information is attributed to specific submitters (Mike Torres, Ray Delgado, Janet Wu) and the report explicitly notes when information was not reported rather than fabricating data."
+        "reason": "All information is attributed to specific submitters (Mike Torres, Ray Delgado, Janet Wu) with no signs of invented facts, and the report explicitly flags when information was not provided."
       },
       "completeness": {
         "score": 5,
-        "reason": "The report explicitly flags missing information (% complete not reported, Janet Wu's plan not stated) and identifies open items requiring PM attention."
+        "reason": "The report explicitly flags missing information including the lack of % complete figures and Janet Wu's missing plan for tomorrow, plus identifies open items requiring PM attention."
       },
       "safety": {
         "score": 5,
-        "reason": "Safety incidents section is clearly addressed with explicit confirmation from two submitters that no safety issues occurred."
+        "reason": "Safety incidents section is clearly addressed with explicit confirmation from Ray Delgado and Janet Wu that no safety issues occurred."
       },
       "submission_compliance": {
         "score": 5,
-        "reason": "The report clearly states '3 of 3 \u2014 All personnel submitted' indicating full submission compliance was verified and reported."
+        "reason": "The report clearly states '3 of 3 \u2014 All personnel submitted' indicating full submission compliance was tracked and reported."
       }
     },
     "input": "Give me the daily report for 2026-05-20",
@@ -267,26 +267,26 @@
     "scores": {
       "correctness": {
         "score": 5,
-        "reason": "The report comprehensively addresses all relevant PM questions including work completed, crew size, delays, progress percentages, safety, materials, and next day plans."
+        "reason": "The report comprehensively addresses all relevant PM questions including work completed, crew size, delays, percent complete, safety, materials, and next day plans."
       },
       "groundedness": {
         "score": 5,
-        "reason": "All information is properly attributed to specific submitters (Mike Torres and Ray Delgado) with clear sourcing, and gaps are flagged rather than filled with invented data."
+        "reason": "All information is attributed to specific submitters (Mike Torres and Ray Delgado) and the report appropriately flags missing information rather than inventing facts."
       },
       "completeness": {
         "score": 5,
-        "reason": "The report explicitly flags missing information with appropriate markers, such as safety not being explicitly stated by Mike Torres and no specific plan from Ray Delgado."
+        "reason": "The report explicitly flags missing information with \u26a0\ufe0f symbols for percent complete from Ray Delgado, safety reporting from Mike Torres, and next day plan from Ray Delgado."
       },
       "safety": {
         "score": 4,
-        "reason": "Safety is addressed with Ray Delgado's confirmation of no issues and a flag noting Mike Torres didn't explicitly mention safety, though the warning symbol appropriately highlights this gap."
+        "reason": "Safety incidents are addressed with Ray Delgado reporting no issues and Mike Torres flagged as not reported, though it could more explicitly prompt follow-up on the missing safety report."
       },
       "submission_compliance": {
         "score": 5,
-        "reason": "The report clearly states '2 of 2 \u2014 All expected submitters reported' indicating full compliance with expected submissions."
+        "reason": "The report clearly states '2 of 2 \u2014 All expected submissions received' indicating full compliance tracking."
       }
     },
     "input": "Give me the daily report for 2026-05-23",
-    "output": "**Daily Report \u2014 Friday, May 23, 2026**\n\n**Submissions received: 2 of 2 \u2014 All expected submitters reported.**\n\n---\n\n### 1. Work Completed Today\n- Per Mike Torres: Started interior footings, reached approximately 40% completion\n- Per Ray Delgado: Completed east wall headers; moved to roof deck framing\n\n### 2. Crew Size & Trades On Site\n- Per Mike Torres: 7 laborers (Concrete)\n- Per Ray Delgado: 6 carpenters (Framing)\n- **Total: 13 workers on site**\n\n### 3. Delays & Causes\n- Per Mike Torres: Concrete truck arrived 45 minutes late; most of the lost time was recovered\n\n### 4. Current % Complete on Active Activities\n- Per Mike Torres: Interior footings \u2014 40% complete\n\n### 5. Safety Incidents or Near Misses\n- Per Ray Delgado: No safety issues reported\n- *No incidents reported by Mike Torres* \u26a0\ufe0f (not explicitly stated)\n\n### 6. Materials Delivered or Needed\n- Per Ray Delgado: Short lumber delivery arrived this morning as scheduled\n- *No material needs flagged*\n\n### 7. Plan for Tomorrow / Next Work Day\n- Per Mike Torres: Finish interior footings by end of Monday\n- *No specific plan stated by Ray Delgado*\n\n---\n\n**Key Takeaways:**\n- Framing is running approximately **1 day ahead of schedule** (per Ray Delgado)\n- Concrete work progressing well despite minor delivery delay\n- Strong close to the week with no safety incidents"
+    "output": "# Daily Report \u2014 Friday, May 23, 2026\n\n**Submissions received: 2 of 2 \u2014 All expected submissions received.**\n\n---\n\n## 1. Work Completed Today\n- **Per Mike Torres:** Started interior footings, reached approximately 40% completion\n- **Per Ray Delgado:** Completed east wall headers; moved to roof deck framing\n\n## 2. Crew Size & Trades On Site\n- **Per Mike Torres:** 7 laborers (Concrete)\n- **Per Ray Delgado:** 6 carpenters (Framing)\n- **Total:** 13 workers on site\n\n## 3. Delays & Causes\n- **Per Mike Torres:** Concrete truck arrived 45 minutes late; most of the lost time was recovered\n\n## 4. Current % Complete on Active Activities\n- **Per Mike Torres:** Interior footings \u2014 40% complete\n- **Per Ray Delgado:** *% complete not specified* \u26a0\ufe0f\n\n## 5. Safety Incidents or Near Misses\n- **Per Mike Torres:** *Not reported* \u26a0\ufe0f\n- **Per Ray Delgado:** No safety issues\n\n## 6. Materials Delivered or Needed\n- **Per Ray Delgado:** Short lumber delivery arrived this morning as scheduled\n- **Per Mike Torres:** *No materials noted*\n\n## 7. Plan for Tomorrow / Next Work Day\n- **Per Mike Torres:** Finish interior footings by end of Monday\n- **Per Ray Delgado:** *Not specified* \u26a0\ufe0f\n\n---\n\n**Notes:**\n- Framing is running approximately **1 day ahead of schedule** (per Ray Delgado)\n- Overall a productive day with minor concrete delivery delay recovered"
   }
 ]
