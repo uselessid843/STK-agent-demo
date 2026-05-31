@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Daily Report</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         background: #f5f5f0; min-height: 100vh; }
+
+  /* ── Role selector ── */
+  #role-screen {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; min-height: 100vh; padding: 2rem; gap: 1.5rem;
+  }
+  #role-screen h1 { font-size: 1.5rem; font-weight: 600; color: #1a1a1a; }
+  #role-screen p  { color: #666; font-size: 0.95rem; }
+  .role-btn {
+    width: 100%; max-width: 340px; padding: 1.25rem 1.5rem;
+    border: 1.5px solid #ddd; border-radius: 12px; background: white;
+    cursor: pointer; text-align: left; transition: all .15s;
+  }
+  .role-btn:hover { border-color: #f97316; background: #fff8f5; }
+  .role-btn .role-title { font-size: 1rem; font-weight: 600; color: #1a1a1a; }
+  .role-btn .role-sub   { font-size: 0.85rem; color: #888; margin-top: 3px; }
+
+  /* ── Shared layout ── */
+  #app { display: none; flex-direction: column; min-height: 100vh; }
+  .topbar {
+    background: white; border-bottom: 1px solid #e5e5e5;
+    padding: .875rem 1.25rem; display: flex; align-items: center;
+    justify-content: space-between;
+  }
+  .topbar-title { font-weight: 600; font-size: 1rem; color: #1a1a1a; }
+  .switch-btn {
+    font-size: 0.8rem; color: #f97316; background: none;
+    border: none; cursor: pointer; padding: 4px 8px;
+  }
+
+  /* ── Submit form ── */
+  #submit-view { padding: 1.5rem; max-width: 600px; margin: 0 auto; width: 100%; }
+  .form-group { margin-bottom: 1.25rem; }
+  label { display: block; font-size: 0.85rem; font-weight: 500;
+          color: #444; margin-bottom: 6px; }
+  select, textarea, input[type="date"] {
+    width: 100%; padding: .75rem 1rem; border: 1.5px solid #ddd;
+    border-radius: 8px; font-size: 0.95rem; background: white;
+    font-family: inherit; transition: border-color .15s;
+  }
+  select:focus, textarea:focus, input[type="date"]:focus {
+    outline: none; border-color: #f97316;
+  }
+  textarea { resize: vertical; min-height: 140px; }
+  .submit-btn {
+    width: 100%; padding: .875rem; background: #f97316; color: white;
+    border: none; border-radius: 8px; font-size: 1rem; font-weight: 600;
+    cursor: pointer; transition: background .15s;
+  }
+  .submit-btn:hover { background: #ea6c0a; }
+  .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
+  .success-msg {
+    display: none; background: #f0fdf4; border: 1px solid #86efac;
+    border-radius: 8px; padding: 1rem; color: #166534;
+    font-size: 0.9rem; margin-top: 1rem; text-align: center;
+  }
+
+  /* ── PM dashboard ── */
+  #pm-view { display: flex; flex-direction: column; flex: 1; }
+  .status-bar {
+    background: white; border-bottom: 1px solid #e5e5e5;
+    padding: .75rem 1.25rem; font-size: 0.85rem; color: #555;
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .status-chip {
+    padding: 3px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;
+  }
+  .chip-ok      { background: #f0fdf4; color: #166534; }
+  .chip-missing { background: #fef2f2; color: #991b1b; }
+
+  #chat-messages {
+    flex: 1; overflow-y: auto; padding: 1.25rem;
+    display: flex; flex-direction: column; gap: .875rem;
+  }
+  .msg { max-width: 85%; padding: .875rem 1rem;
+         border-radius: 12px; font-size: 0.92rem; line-height: 1.55; }
+  .msg-user {
+    background: #f97316; color: white; align-self: flex-end;
+    border-bottom-right-radius: 4px;
+  }
+  .msg-agent {
+    background: white; color: #1a1a1a; align-self: flex-start;
+    border: 1px solid #e5e5e5; border-bottom-left-radius: 4px;
+    white-space: pre-wrap;
+  }
+  .msg-feedback {
+    display: flex; gap: 8px; margin-top: 8px;
+  }
+  .fb-btn {
+    background: none; border: 1px solid #ddd; border-radius: 6px;
+    padding: 3px 10px; cursor: pointer; font-size: 0.85rem;
+    transition: all .15s;
+  }
+  .fb-btn:hover { background: #f5f5f0; }
+  .fb-btn.selected-up   { background: #f0fdf4; border-color: #86efac; }
+  .fb-btn.selected-down { background: #fef2f2; border-color: #fca5a5; }
+
+  .msg-thinking {
+    background: white; color: #888; align-self: flex-start;
+    border: 1px solid #e5e5e5; border-radius: 12px;
+    padding: .875rem 1rem; font-size: 0.9rem; font-style: italic;
+  }
+
+  #chat-input-area {
+    background: white; border-top: 1px solid #e5e5e5;
+    padding: 1rem 1.25rem; display: flex; gap: .75rem;
+  }
+  #chat-input {
+    flex: 1; padding: .75rem 1rem; border: 1.5px solid #ddd;
+    border-radius: 8px; font-size: 0.95rem; font-family: inherit;
+    transition: border-color .15s;
+  }
+  #chat-input:focus { outline: none; border-color: #f97316; }
+  #send-btn {
+    padding: .75rem 1.25rem; background: #f97316; color: white;
+    border: none; border-radius: 8px; font-weight: 600;
+    cursor: pointer; font-size: 0.95rem; transition: background .15s;
+  }
+  #send-btn:hover    { background: #ea6c0a; }
+  #send-btn:disabled { background: #ccc; cursor: not-allowed; }
+
+  .quick-btns {
+    padding: .5rem 1.25rem 0; display: flex; gap: .5rem; flex-wrap: wrap;
+    background: white;
+  }
+  .quick-btn {
+    padding: 5px 12px; border: 1px solid #e5e5e5; border-radius: 20px;
+    background: #f9f9f7; font-size: 0.8rem; cursor: pointer;
+    transition: all .15s; color: #444;
+  }
+  .quick-btn:hover { border-color: #f97316; color: #f97316; }
+</style>
+</head>
+<body>
+
+<!-- Role selector -->
+<div id="role-screen">
+  <h1>🏗️ Site Daily Report</h1>
+  <p>Who are you today?</p>
+  <button class="role-btn" onclick="selectRole('super')">
+    <div class="role-title">Super / Field Worker</div>
+    <div class="role-sub">Submit your daily field report</div>
+  </button>
+  <button class="role-btn" onclick="selectRole('pm')">
+    <div class="role-title">Project Manager</div>
+    <div class="role-sub">Review reports and query the agent</div>
+  </button>
+</div>
+
+<!-- Main app -->
+<div id="app">
+  <div class="topbar">
+    <span class="topbar-title" id="topbar-title">Daily Report</span>
+    <button class="switch-btn" onclick="switchRole()">Switch role</button>
+  </div>
+
+  <!-- Super submit view -->
+  <div id="submit-view">
+    <div class="form-group">
+      <label>Your name</label>
+      <select id="submitter-name">
+        <option value="">Select your name</option>
+        <option value="Mike Torres|Concrete Super">Mike Torres — Concrete Super</option>
+        <option value="Ray Delgado|Framing Super">Ray Delgado — Framing Super</option>
+        <option value="Janet Wu|Site Foreman">Janet Wu — Site Foreman</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Date</label>
+      <input type="date" id="submit-date">
+    </div>
+    <div class="form-group">
+      <label>Your daily notes</label>
+      <textarea id="submit-notes"
+        placeholder="What did you work on today? Any delays, safety issues, crew size, materials, plan for tomorrow?">
+      </textarea>
+    </div>
+    <button class="submit-btn" id="submit-btn" onclick="submitReport()">
+      Submit report
+    </button>
+    <div class="success-msg" id="success-msg"></div>
+  </div>
+
+  <!-- PM dashboard view -->
+  <div id="pm-view" style="display:none; flex-direction:column; flex:1;">
+    <div class="status-bar" id="status-bar">
+      Loading submission status...
+    </div>
+    <div id="chat-messages">
+      <div class="msg msg-agent">
+        Hi — I'm your daily report agent. Ask me about today's reports,
+        who hasn't submitted, delays, safety issues, or request a weekly summary.
+      </div>
+    </div>
+    <div class="quick-btns">
+      <button class="quick-btn"
+        onclick="sendQuick('Give me the daily report for 2026-05-21')">
+        Daily report
+      </button>
+      <button class="quick-btn"
+        onclick="sendQuick('Who has not submitted for 2026-05-19')">
+        Check submissions
+      </button>
+      <button class="quick-btn"
+        onclick="sendQuick('Send reminders to anyone who has not submitted for 2026-05-19')">
+        Send reminders
+      </button>
+      <button class="quick-btn"
+        onclick="sendQuick('Give me the weekly summary from 2026-05-19 to 2026-05-23')">
+        Weekly summary
+      </button>
+      <button class="quick-btn"
+        onclick="sendQuick('What safety issues happened this week')">
+        Safety issues
+      </button>
+    </div>
+    <div id="chat-input-area">
+      <input id="chat-input" type="text"
+        placeholder="Ask about reports, delays, safety, submissions..."
+        onkeydown="if(event.key==='Enter') sendMessage()">
+      <button id="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('submit-date').value = today;
+
+function selectRole(role) {
+  document.getElementById('role-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+  if (role === 'super') {
+    document.getElementById('topbar-title').textContent = 'Submit Daily Report';
+    document.getElementById('submit-view').style.display = 'block';
+    document.getElementById('pm-view').style.display = 'none';
+  } else {
+    document.getElementById('topbar-title').textContent = 'PM Dashboard';
+    document.getElementById('submit-view').style.display = 'none';
+    document.getElementById('pm-view').style.display = 'flex';
+    loadStatus();
+  }
+}
+
+function switchRole() {
+  document.getElementById('role-screen').style.display = 'flex';
+  document.getElementById('app').style.display = 'none';
+}
+
+async function loadStatus() {
+  try {
+    const res = await fetch(`/api/status/2026-05-19`);
+    const data = await res.json();
+    const bar = document.getElementById('status-bar');
+    bar.innerHTML = '<strong>Submissions today:</strong> ' +
+      data.submitted.map(s =>
+        `<span class="status-chip chip-ok">✓ ${s.name}</span>`
+      ).join('') +
+      data.missing.map(s =>
+        `<span class="status-chip chip-missing">✗ ${s.name}</span>`
+      ).join('');
+  } catch(e) {
+    document.getElementById('status-bar').textContent = 'Could not load status.';
+  }
+}
+
+async function submitReport() {
+  const nameVal = document.getElementById('submitter-name').value;
+  const date    = document.getElementById('submit-date').value;
+  const notes   = document.getElementById('submit-notes').value.trim();
+  if (!nameVal || !date || !notes) {
+    alert('Please fill in all fields before submitting.');
+    return;
+  }
+  const [name, role] = nameVal.split('|');
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+  try {
+    const res = await fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ submitter: name, role, date, raw_input: notes })
+    });
+    const data = await res.json();
+    const msg = document.getElementById('success-msg');
+    msg.textContent = data.message;
+    msg.style.display = 'block';
+    document.getElementById('submit-notes').value = '';
+    btn.textContent = 'Submit another report';
+    btn.disabled = false;
+  } catch(e) {
+    alert('Submission failed. Please try again.');
+    btn.disabled = false;
+    btn.textContent = 'Submit report';
+  }
+}
+
+async function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const text  = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  appendMessage(text, 'user');
+  const thinking = appendThinking();
+  document.getElementById('send-btn').disabled = true;
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text })
+    });
+    const data = await res.json();
+    thinking.remove();
+    appendMessage(data.response || data.error, 'agent', text);
+  } catch(e) {
+    thinking.remove();
+    appendMessage('Something went wrong. Please try again.', 'agent', text);
+  }
+  document.getElementById('send-btn').disabled = false;
+}
+
+function sendQuick(text) {
+  document.getElementById('chat-input').value = text;
+  sendMessage();
+}
+
+function appendMessage(text, role, originalInput) {
+  const msgs = document.getElementById('chat-messages');
+  const div  = document.createElement('div');
+  div.className = `msg msg-${role}`;
+  div.textContent = text;
+  if (role === 'agent') {
+    const fb = document.createElement('div');
+    fb.className = 'msg-feedback';
+    fb.innerHTML = `
+      <button class="fb-btn" onclick="sendFeedback(this,'up','${
+        (originalInput||'').replace(/'/g,"\\'")}')">👍</button>
+      <button class="fb-btn" onclick="sendFeedback(this,'down','${
+        (originalInput||'').replace(/'/g,"\\'")}')">👎</button>`;
+    div.appendChild(fb);
+  }
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function appendThinking() {
+  const msgs = document.getElementById('chat-messages');
+  const div  = document.createElement('div');
+  div.className = 'msg-thinking';
+  div.textContent = 'Agent thinking...';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+async function sendFeedback(btn, rating, message) {
+  const parent = btn.parentElement;
+  parent.querySelectorAll('.fb-btn').forEach(b => {
+    b.classList.remove('selected-up', 'selected-down');
+  });
+  btn.classList.add(rating === 'up' ? 'selected-up' : 'selected-down');
+  await fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ rating, message })
+  });
+}
+</script>
+</body>
+</html>

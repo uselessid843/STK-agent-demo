@@ -1,0 +1,122 @@
+[
+    {
+      "id": "eval_001",
+      "input": "Give me the daily report for 2026-05-19",
+      "expected": {
+        "all_7_questions_answered": true,
+        "delays_mentioned": true,
+        "safety_clear": true,
+        "missing_submitter_flagged": true,
+        "no_hallucination": true
+      },
+      "notes": "Happy path. Mike and Ray submitted. Janet missing. Rebar delay."
+    },
+    {
+      "id": "eval_002",
+      "input": "Give me the daily report for 2026-05-21",
+      "expected": {
+        "all_7_questions_answered": true,
+        "delays_mentioned": true,
+        "safety_clear": false,
+        "missing_submitter_flagged": false,
+        "no_hallucination": true
+      },
+      "notes": "Weather delay day. Near miss safety incident. All 3 submitted."
+    },
+    {
+      "id": "eval_003",
+      "input": "Give me the daily report for 2026-05-22",
+      "expected": {
+        "all_7_questions_answered": false,
+        "delays_mentioned": false,
+        "safety_clear": true,
+        "missing_submitter_flagged": false,
+        "no_hallucination": true
+      },
+      "notes": "Edge case. Mike missing crew count. Agent should flag it."
+    },
+    {
+      "id": "eval_004",
+      "input": "Who hasn't submitted for 2026-05-19",
+      "expected": {
+        "all_7_questions_answered": false,
+        "delays_mentioned": false,
+        "safety_clear": true,
+        "missing_submitter_flagged": true,
+        "no_hallucination": true
+      },
+      "notes": "Compliance check. Janet Wu should appear."
+    },
+    {
+      "id": "eval_005",
+      "input": "Who hasn't submitted for 2026-05-23",
+      "expected": {
+        "all_7_questions_answered": false,
+        "delays_mentioned": false,
+        "safety_clear": true,
+        "missing_submitter_flagged": true,
+        "no_hallucination": true
+      },
+      "notes": "Compliance check. Janet Wu missing again on Friday."
+    },
+    {
+      "id": "eval_006",
+      "input": "Send reminders to anyone who hasn't submitted for 2026-05-19",
+      "expected": {
+        "all_7_questions_answered": false,
+        "delays_mentioned": false,
+        "safety_clear": true,
+        "missing_submitter_flagged": true,
+        "no_hallucination": true
+      },
+      "notes": "Reminder trigger. Should confirm reminder sent to Janet Wu."
+    },
+    {
+      "id": "eval_007",
+      "input": "Give me the weekly summary from 2026-05-19 to 2026-05-23",
+      "expected": {
+        "all_7_questions_answered": true,
+        "delays_mentioned": true,
+        "safety_clear": false,
+        "missing_submitter_flagged": true,
+        "no_hallucination": true
+      },
+      "notes": "Full week rollup. Weather delay, near miss, lumber shortage all present."
+    },
+    {
+      "id": "eval_008",
+      "input": "What safety issues happened this week",
+      "expected": {
+        "all_7_questions_answered": false,
+        "delays_mentioned": false,
+        "safety_clear": false,
+        "missing_submitter_flagged": false,
+        "no_hallucination": true
+      },
+      "notes": "Safety focused query. Near miss on Wednesday must be surfaced."
+    },
+    {
+      "id": "eval_009",
+      "input": "Give me the daily report for 2026-05-20",
+      "expected": {
+        "all_7_questions_answered": true,
+        "delays_mentioned": true,
+        "safety_clear": true,
+        "missing_submitter_flagged": false,
+        "no_hallucination": true
+      },
+      "notes": "Tuesday. Carpenter no-shows caused delay. All 3 submitted."
+    },
+    {
+      "id": "eval_010",
+      "input": "Give me the daily report for 2026-05-23",
+      "expected": {
+        "all_7_questions_answered": true,
+        "delays_mentioned": true,
+        "safety_clear": true,
+        "missing_submitter_flagged": true,
+        "no_hallucination": true
+      },
+      "notes": "Friday. Concrete truck late. Janet missing. Ray ahead of schedule."
+    }
+  ]
