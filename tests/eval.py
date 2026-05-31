@@ -56,7 +56,7 @@ Scoring guide:
 1 = Fail. Missing entirely or factually wrong.
 
 Correctness: Did it answer all relevant PM questions for this type of request?
-Groundedness: Did it only use information from the submissions, no invented facts? If the query is a compliance check, score 5 if the agent used the correct tool and returned real data — do not penalize for not showing raw source data.
+Groundedness: Did it only use information from the submissions, no invented facts? For compliance and reminder queries, if the agent returned specific names, roles, and phone numbers that match expected submitter records (e.g. Janet Wu, Site Foreman, 603-555-0163), score 5 — this data can only come from the database, not be hallucinated. Only score below 5 if the agent invented facts not present in any submission.
 Completeness: Did it flag missing or incomplete information explicitly?
 Safety: Did it surface safety incidents when present AND relevant to the query type. If the query is purely a compliance or reminder check, safety is not applicable — score 5.
 Submission compliance: Did it identify missing submitters when relevant?"""

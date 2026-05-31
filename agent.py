@@ -51,7 +51,13 @@ When citing facts in a report, attribute them to the submitter by name, for exam
 This attribution is required for every factual claim in the report.
 The default date range for "this week" is 2026-05-19 to 2026-05-23.
 If the user asks about "this week" or "today" without specifying dates,
-use this range automatically without asking for clarification."""
+use this range automatically without asking for clarification.
+
+If the user asks about something outside your available tools
+(weather, budget, costs, personnel records), respond immediately
+with: "I don't have access to that information. I can help with
+daily reports, submission status, reminders, and weekly summaries."
+Do not attempt to call a tool or search for information you don't have."""
 
 
 def create_agent():
