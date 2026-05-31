@@ -23,11 +23,15 @@ def chat():
     if not user_input:
         return jsonify({'error': 'No message provided'}), 400
     try:
-        result = agent_executor.invoke({
-            'messages': [{'role': 'user', 'content': user_input}]
-        })
+        from langsmith import Client
+        import uuid
+        run_id = str(uuid.uuid4())
+        result = agent_executor.invoke(
+            {'messages': [{'role': 'user', 'content': user_input}]},
+            config={'run_id': run_id, 'callbacks': None}
+        )
         response = result['messages'][-1].content
-        return jsonify({'response': response})
+        return jsonify({'response': response, 'run_id': run_id})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -69,7 +73,23 @@ def status(date_str):
 @app.route('/api/feedback', methods=['POST'])
 def feedback():
     data = request.json
-    print(f"[FEEDBACK] {data.get('rating')} | {data.get('message', '')[:60]}")
+    rating = data.get('rating')
+    run_id = data.get('run_id')
+    message = data.get('message', '')
+    print(f"[FEEDBACK] {rating} | {message[:60]}")
+    if run_id:
+        try:
+            from langsmith import Client
+            ls_client = Client()
+            ls_client.create_feedback(
+                run_id=run_id,
+                key="quality",
+                score=1 if rating == 'up' else 0,
+                comment=message[:200]
+            )
+            print(f"[LANGSMITH] Feedback logged for run {run_id}")
+        except Exception as e:
+            print(f"[LANGSMITH] Feedback error: {e}")
     return jsonify({'success': True})
 
 if __name__ == '__main__':

@@ -322,7 +322,7 @@ async function sendMessage() {
     });
     const data = await res.json();
     thinking.remove();
-    appendMessage(data.response || data.error, 'agent', text);
+    appendMessage(data.response || data.error, 'agent', text, data.run_id);
   } catch(e) {
     thinking.remove();
     appendMessage('Something went wrong. Please try again.', 'agent', text);
@@ -335,7 +335,7 @@ function sendQuick(text) {
   sendMessage();
 }
 
-function appendMessage(text, role, originalInput) {
+function appendMessage(text, role, originalInput, runId) {
   const msgs = document.getElementById('chat-messages');
   const div  = document.createElement('div');
   div.className = `msg msg-${role}`;
@@ -345,9 +345,9 @@ function appendMessage(text, role, originalInput) {
     fb.className = 'msg-feedback';
     fb.innerHTML = `
       <button class="fb-btn" onclick="sendFeedback(this,'up','${
-        (originalInput||'').replace(/'/g,"\\'")}')">👍</button>
+        (originalInput||'').replace(/'/g,"\\'")}','${runId||''}')">👍</button>
       <button class="fb-btn" onclick="sendFeedback(this,'down','${
-        (originalInput||'').replace(/'/g,"\\'")}')">👎</button>`;
+        (originalInput||'').replace(/'/g,"\\'")}','${runId||''}')">👎</button>`;
     div.appendChild(fb);
   }
   msgs.appendChild(div);
@@ -365,7 +365,7 @@ function appendThinking() {
   return div;
 }
 
-async function sendFeedback(btn, rating, message) {
+async function sendFeedback(btn, rating, message, runId) {
   const parent = btn.parentElement;
   parent.querySelectorAll('.fb-btn').forEach(b => {
     b.classList.remove('selected-up', 'selected-down');
@@ -374,7 +374,7 @@ async function sendFeedback(btn, rating, message) {
   await fetch('/api/feedback', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ rating, message })
+    body: JSON.stringify({ rating, message, run_id: runId })
   });
 }
 </script>
